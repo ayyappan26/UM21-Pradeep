@@ -1,0 +1,20 @@
+package com.ultramain.um21.exercise3;
+
+public class Buffer {
+
+	public static void main(String[] args) {
+		StringBuffer sb=new StringBuffer("This is StringBuffer");
+		sb.append(" This is a sample program");
+		System.out.println(sb);
+		StringBuffer l=sb.insert(21, "Object");
+		System.out.println(l);
+		sb.reverse();
+		System.out.println(sb);
+		StringBuffer sb1=new StringBuffer("This is StringBuffer");
+		
+		sb1.replace(14, 21, "Builder");
+		System.out.println(sb1);
+
+	}
+
+}
