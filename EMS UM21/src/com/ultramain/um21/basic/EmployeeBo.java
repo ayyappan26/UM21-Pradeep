@@ -13,7 +13,10 @@ public class EmployeeBo {
 			System.out.println("Welcome to the employee management system");
 			System.out.println("1. Register Employee");
 			System.out.println("2. View Employee");
-			System.out.println("3. Exit");
+			System.out.println("3. update one Employee");
+			System.out.println("4. update employee");
+			System.out.println("5. Delete Employee");
+			System.out.println("6. Exit");
 			System.out.println("Enter your Choice: ");
 			choice = scan.nextInt();
 		} while (choice == 0);
@@ -26,6 +29,16 @@ public class EmployeeBo {
 			viewEmployees(dao);
 			break;
 		case 3:
+			viewOneEmp(dao);
+			break;
+		case 4:
+			updateEmployee(dao);
+			break;
+		case 5:
+			deleteEmployee(dao);
+			break;
+			
+		case 6:
 			return;
 		}
 	}
@@ -48,6 +61,32 @@ public class EmployeeBo {
 		}
 
 	}
+	
+	public void viewOneEmp(EmployeeDao dao){
+		try {
+			dao.viewOneEmp();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public void updateEmployee(EmployeeDao dao){
+		EmployeeDTO empDto=getEmpDetails();
+		try {
+			dao.updateEmployee(empDto);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public void deleteEmployee(EmployeeDao dao){
+		try {
+			dao.deleteEmployee();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+		
+		
+	
 	
 	
 
